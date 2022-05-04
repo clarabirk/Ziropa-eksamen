@@ -1,0 +1,968 @@
+/* ---------- root variables ---------- */
+:root {
+    --light-green: rgb(172, 198, 201);
+  }
+  
+  /* ---------- general styling ---------- */
+  html,
+  body {
+    text-align: center;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Serif", serif;
+    background-color: white;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  li a {
+    text-decoration: none;
+  }
+  
+  /* ---------- Logo styling ---------- */
+  
+  
+  h1 {
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+  
+  .logo {
+    position: absolute;
+    left: 0;
+    top: -10px;
+  }
+  
+  /* ---------- page styling ---------- */
+  .page {
+    display: block;
+    /*min heigh is screen heigh minus height of tab and top bar */
+    min-height: calc(100vh - 110px);
+    background: var(--light-grey);
+    animation: fadeIn 0.4s;
+    /* padding equals height of tabbar and topbar */
+    padding: 55px 0;
+  }
+  
+  /* ---------- header styling ---------- */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 1em 0;
+    height: 5em;
+    background-color: #D9CFC1;
+    box-shadow: 1px 1px 1px 1px #eeeeee;
+  }
+  
+  /* header content width*/
+  .tabbar {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+  
+  .hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s linear;
+  }
+  
+  .mobileiconlabel {
+    right: 0;
+    position: absolute;
+    display: inline-block;
+    font-style: normal;
+    font-size: 1.8rem;
+    padding: 10px 5px;
+  }
+  
+  .menuitem {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: 15px;
+  }
+  
+  .active_menuitem {
+    border-radius: 10px;
+    border: solid 2px #d6cece;
+  }
+  
+  .cta_style {
+    background-color: white;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  /* Hide checkbox and menuitems until clicked */
+  .menuitems__container,
+  .mobileicon {
+    display: none;
+  }
+  
+  /* Show menuitems when mobileicon-label is clicked */
+  .mobileicon:checked ~ .menuitems__container {
+    display: flex;
+  }
+  
+  .menuitems__container {
+    margin-left: -12,5%;
+    margin-right: -12,5%;
+    position: absolute;
+    top: 0;
+    margin-top: 3em;
+    padding-top: 1em;
+    flex-direction: column;
+    background-color: #D9CFC1;
+  }
+  
+  /* ------ Slides første side ------ */
+  .SimpleSlider {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    outline: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .SimpleSlider IMG {
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+  }
+  
+  .SimpleSlider IMG.is-hidden {
+    opacity: 0;
+  }
+  
+  .billede2 {
+    height: 600px;
+    width: 100%;
+    margin-top: 300px;
+    filter: blur(3px);
+  }
+
+  /* -------- Tekstboks forside ------ */
+
+  .heading1 {
+      font-size: 40px;
+      margin-top: 60px;
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+      color: white;
+      font-weight: bold;
+      border: 3px solid #f1f1f1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 50%;
+      padding: 50px;
+      text-align: center;
+  }
+
+  .tekst_forside {
+      font-size: 20px;
+  }
+  
+  /* --------- Grid boks ---------- */
+  
+  .grid-container {
+    display: grid;
+    max-width: 100%;
+    margin-top: 400px;
+    margin-bottom: -200px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-rows: 315px 315px;
+    gap: 0px 0px;
+    text-align: center;
+    background-color: #D9CFC1;
+    justify-content: space-evenly;
+    grid-template-areas:
+      "box1 box2 box3";
+  }
+  
+  .box1 {
+    grid-area: box1;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 105px;
+  }
+  
+  .box2 {
+    grid-area: box2;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 110px;
+  }
+  
+  .box3 {
+    grid-area: box3;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 110px;
+  }
+
+  .tekst_grid {
+      font-size: 18px;
+  }
+
+  /* Linjer der deler grid-boksene op */
+
+  .vertical {
+      border: 1px solid black;
+      height: 250px;
+      position: absolute;
+      left: 35%;
+      margin-top: 80px;
+  }
+
+  .vertical1 {
+    border: 1px solid black;
+    height: 250px;
+    position: absolute;
+    left: 67%;
+    margin-top: 80px;
+  }
+
+  /* billeder til forsiden */
+
+ .billeder_forside {
+  display: flex;
+ }
+  
+ .billede_forside {
+     flex: 33.33%;
+ }
+
+ .img1:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  
+  .img2:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  
+  .img3:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+ /* ----Tesktstykke til forsiden---- */
+ .tekst_forside1 {
+     margin-left: 150px;
+     margin-right: 150px;
+     margin-top: 100px;
+     margin-bottom: 50px;
+     font-size: 18px;
+ }
+
+ .btn {
+    border: none;
+    background-color: #D9CFC1;
+    padding: 14px 28px;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 40px;
+    border-radius: 5%;
+    font-family: "PT Serif", serif;
+  }
+  
+  /* ----On mouse-over----- */
+  .btn:hover {background: #FF8A5E;}
+
+  /* ----Video sektion---- */
+
+.video_section {
+    height: 100px;
+    margin-top: 100px;
+    margin-bottom: 370px;
+ }
+
+/* ---- Om Os ---- */
+ .billede_ingerslev {
+   margin-top: 150px;
+   float: left;
+   margin-left: -150px;
+ }
+
+ .heading_omos {
+   margin-top: 200px;
+   margin-right: 100px;
+   margin-left: 700px;
+ }
+  
+ 
+  /* ----- Kontakt siden ------ */
+
+  .overskrift_kontakt {
+      margin-top: 150px;
+  }
+  
+  /* ---- Kontakt formular ---- */
+  
+  input:focus ~ label,
+  textarea:focus ~ label,
+  input:valid ~ label,
+  textarea:valid ~ label {
+    font-size: 0.75em;
+    color: black;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+  }
+  
+  .row {
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  .styled-input {
+    float: left;
+    width: 200px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+  }
+  
+  .styled-input {
+    width: 100%;
+  }
+  
+  .styled-input label {
+    color: black;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+  }
+  
+  .styled-input.wide {
+    width: 650px;
+    max-width: 100%;
+  }
+  
+  input,
+  textarea {
+    padding: 30px;
+    border: 0;
+    width: 80%;
+    font-size: 1rem;
+    background-color: #D9CFC1;
+    color: black;
+    border-radius: 4px;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: 0;
+  }
+  
+  input:focus ~ span,
+  textarea:focus ~ span {
+    width: 80%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+  }
+  
+  textarea {
+    width: 80%;
+    min-height: 10em;
+  }
+  
+  .input-container {
+    width: 450px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+  
+  .input-container {
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+  
+  .knap {
+    padding: 7px 35px;
+    border-radius: 60px;
+    background-color: #D9CFC1;
+    font-size: 18px;
+    margin-bottom: 80px;
+    font-family: "PT Serif", serif;
+  }
+  
+  input[type="checkbox"] + label {
+    color: black;
+    font-style: italic;
+  }
+  
+  input[type="checkbox"]:checked + label {
+    color: #FF8A5E;
+    font-style: normal;
+  }
+
+   /* ----- Mapbox ------ */ 
+   .main_map  {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: -60px;
+  }
+  .main_map #map {
+    height: 70vh;
+  }
+  .main_map #map .marker {
+      background-image: url("../img/flaske1.png");
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+  .main_map #map .mapboxgl-popup {
+    max-width: 200px;
+  }
+  .main_map #map .mapboxgl-popup-content {
+    text-align: center;
+    color: black;
+  }
+  
+  
+  /* ----- Page footer ----- */
+  
+  .page_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid  #D9CFC1;
+    padding: 50px;
+    color: black;
+    font-family: "PT Serif", serif;
+    background-color:  #D9CFC1;
+    width: 100%;
+    box-shadow: 5px 10px;
+  }
+  
+  .footer_card_heading {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 20px;
+    border-bottom: 2px dashed black;
+  }
+  
+  .footer_card_heading1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-left: 0px;
+    border-bottom: 2px dashed black;
+  }
+  
+  .address {
+    margin-left: 0px;
+    margin-right: 200px;
+    font-size: 15px;
+  }
+  
+  .footer_card:first-child .footer_card_heading {
+    margin-bottom: 5px;
+    margin-right: 20px;
+  }
+  
+  .some_image {
+    width: 40px;
+    margin: 20px;
+    margin-left: -10px;
+  }
+  
+  /* ----- Mobil version ----- */
+  
+  @media only screen and (max-width: 700px) {
+    .cta_style {
+      background-color: lightgray;
+      color: white;
+      border-radius: 10px;
+      color: black;
+    }
+  
+    .knappi {
+      margin-left: 50px;
+    }
+  
+    .mobileiconlabel,
+    .mobileicon {
+      color: black;
+      margin-right: 10px;
+      margin-top: -25px;
+    }
+   
+  
+    .logo {
+      position: absolute;
+      max-width: 180px;
+      top: -20px;
+     
+    }
+  
+    /* ------ Slides første side ------ */
+    .SimpleSlider {
+      position: relative;
+      height: 100px;
+      width: 100%;
+      outline: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+    }
+  
+    .SimpleSlider IMG {
+      position: absolute;
+      opacity: 1;
+      -webkit-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      -ms-transition: opacity 1s;
+      -o-transition: opacity 1s;
+      transition: opacity 1s;
+    }
+  
+    .SimpleSlider IMG.is-hidden {
+      opacity: 0;
+    }
+  
+    .billede2 {
+      width: 95%;
+      height: 200px;
+    }
+    
+    /* -------- Tekstboks forside ------ */
+  
+  .tekstboks1 {
+    margin-top: 80px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "PT Serif", serif;
+  }
+  
+  /* --------- Grid boks ---------- */
+  
+  .grid-container {
+    display: grid;
+    max-width: 90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 315px;
+    grid-template-rows: 280px 280px 280px 280px ;
+    gap: 0px 0px;
+    font-family: "PT Serif", serif;
+    text-align: center;
+    justify-content: space-evenly;
+    background-color: #d6cece;
+    margin-bottom: 40px;
+    grid-template-areas:
+      "box1"
+      "box2"
+      "box3" 
+      "box5";
+  }
+  
+  .box1 {
+    grid-area: box1;
+    margin-top: 25px;
+  }
+  
+  .box2 {
+    grid-area: box2;
+    margin-top: -10px;
+  }
+  
+  .box3 {
+    grid-area: box3;
+  }
+  
+  .box5 {
+    grid-area: box5;
+    margin-bottom: 200px;
+  }
+  
+  /* ---- Slider forside ----- */ 
+  .slider {
+    background: #d6cece;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 160px;
+    margin: auto;
+    margin-top: 80px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 40%);
+    content: "";
+    height: 160px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+  }
+  
+  .slider .slide {
+    height: 100px;
+    width: 250px;
+  }
+  
+  .slide {
+    margin-top: 30px;
+  }
+  
+  /* ----- Arrangementer ------ */
+  .overskrift_arrangementer {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "PT Serif", serif;
+  }
+  
+  .arrangement__container1 {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 5rem;
+    padding-top: 1em;
+    flex-direction: column;
+    background-color: white;
+    font-family: "PT Serif", serif;
+  }
+  
+  .grid-container1 {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: "PT Serif", serif;
+  }
+  
+  .data {
+    max-width: 101.5%;
+    height: 360px;
+    object-fit: cover;
+  }
+  
+  .button {
+    border: 1px solid #d6cece;
+    background-color: #d6cece;
+    padding: 20px;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40%;
+    font-family: "PT Serif", serif;
+    margin-bottom: 30px;
+  }
+  
+  /* ------ TILBYDER ------- */
+  
+  .container3 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 350px;
+    grid-template-rows: 50px 190px 40px 320px 50px 250px;
+    grid-auto-columns: 1fr;
+    gap: 70px 50px;
+    font-family: "PT Serif", serif;
+    justify-content: center;
+    text-align: center;
+    grid-template-areas:
+      "img1" 
+      "tekst1"
+      "img2"
+      "tekst2"
+      "img3" 
+      "tekst3";
+  }
+  .billede1 {
+    width: 80%;
+  }
+  
+  .billede3 {
+    width: 80%;
+  }
+  
+  .billede4 {
+    width: 80%;
+  }
+  .tekst1 {
+    width: 80%;
+  }
+  
+  .tekst2 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: "PT Serif", serif;
+  }
+  
+  .tekst3 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: "PT Serif", serif;
+  }
+  
+  /* ------ Booking ------ */
+  
+  .container {
+    margin-top: 50px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "PT Serif", serif;
+  }
+  
+  .input-container {
+    max-width: 82%;
+    float: left;
+  }
+  
+  .submit-btn {
+    max-width: 97%;
+  }
+  
+  /* ------ Om os ------ */
+  .tekst_omos {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "PT Serif", serif;
+  }
+  
+  .tekst_omos2 {
+    background-color: #d6cece;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: "PT Serif", serif;
+  }
+  
+  .containerom {
+      max-width: 1100px;
+      overflow: auto;
+  }
+  
+  header {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    font-family: "PT Serif", serif;
+  }
+  
+  header h1 {
+      font-size: 60px;
+  }
+  
+  .counters {
+      padding: 60px;
+    width: 100%;  
+  }
+  
+  .counters .containerom {
+      display: block;
+    grid-template-rows: repeat(4, 1fr);
+      grid-gap: 30px;
+    margin-right: 110px;
+  }
+  
+  .counters i {
+      margin-bottom: 5px;
+  }
+  
+  .counters .counter {
+      font-size: 45px;
+  }
+  
+  .grid-container20 {
+    display: grid;
+    max-width: 90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 315px;
+    grid-template-rows: 280px 280px 280px 280px ;
+    gap: 0px 0px;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    font-family: "PT Serif", serif;
+    grid-template-areas:
+      "box6" 
+      "box7"
+      "box8" 
+      "box9";
+  }
+  
+  .box6 {
+    grid-area: box1;
+    margin-top: 25px;
+  }
+  
+  .box7 {
+    grid-area: box2;
+    margin-top: -10px;
+  }
+  
+  .box8 {
+    grid-area: box3;
+  }
+  
+  .box9 {
+    grid-area: box5;
+    margin-bottom: 200px;
+  }
+  
+  /* ----- Page footer ----- */
+  
+  .page_footer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer_card {
+    margin-right: auto;
+    margin-left: 15px;
+    justify-content: center;
+  }
+  
+  .containerjeps {
+    display: grid;
+    grid-template-columns: 300px ;
+    grid-template-rows: 300px 130px;
+    gap: 250px 0px;
+    grid-auto-flow: row;
+    justify-content: center;
+    grid-template-areas:
+      "jeps1"
+      "jeps2"
+      "jeps3";
+  }
+  
+  .jeps1 { grid-area: jeps1; }
+  
+  .jeps2 { grid-area: jeps2; }
+  
+  .jeps3 { grid-area: jeps3; }
+  
+  }
+  
+  .klimaovers {
+    font-size: 1.7rem;
+  }
+  
+  
+  
+  @media only screen and (min-width: 768px) {
+    .mobileiconlabel,
+    .mobileicon {
+      display: none;
+    }
+  
+    .tabbar {
+      justify-content: flex-end;
+    }
+  
+    .menuitems__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: initial;
+      margin: 0;
+      padding-top: 0;
+    }
+  
+    .menuitem {
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      background: none;
+      margin-left: 2em;
+      padding: 10px;
+    }
+    
+    
+  }
